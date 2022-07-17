@@ -43,7 +43,7 @@ def save_data(dataset):
     """Saving received predictions"""
     if os.path.exists(SAVE_DATASET_FILE):
         save_dataset = pd.read_csv(SAVE_DATASET_FILE)
-        save_dataset = pd.merge(save_dataset, dataset)
+        save_dataset = pd.concat([save_dataset, dataset])
     else:
         save_dataset = dataset
 
